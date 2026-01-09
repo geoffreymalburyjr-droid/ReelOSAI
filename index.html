@@ -13,7 +13,6 @@
         .glow-cyan { text-shadow: 0 0 15px rgba(0, 210, 255, 0.6); color: #00D2FF; }
         .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
         .mystery-gradient { background: linear-gradient(180deg, #4A1D96 0%, #064E3B 100%); }
-        .pricing-glow { border: 1px solid #00D2FF; box-shadow: 0 0 40px rgba(0, 210, 255, 0.15); }
     </style>
 </head>
 <body class="grid-bg min-h-screen">
@@ -22,101 +21,82 @@
         <div class="text-2xl font-black italic">ReelOS<span class="text-cyan-400">AI</span></div>
         <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
             <a href="#about" class="hover:text-cyan-400 transition">About</a>
-            <a href="#subscribe" class="hover:text-cyan-400 transition">Pricing</a>
+            <a href="vault.html" class="hover:text-cyan-400 transition">Pricing</a>
         </div>
         <a href="vault.html" class="bg-cyan-500 text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,210,255,0.4)] hover:scale-105 transition">Launch OS</a>
+    </nav>
 
-    <main class="max-w-6xl mx-auto px-6">
+    <main class="max-w-6xl mx-auto px-6 text-center">
         
-        <section class="text-center py-20">
+        <section class="py-20 flex flex-col items-center">
             <div class="inline-block px-4 py-1 border border-white/20 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6 text-gray-400 bg-black">
                 The Content Operating System
             </div>
-            <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] max-w-5xl">
                 Gain the <span class="glow-cyan italic">Unfair Advantage</span> in AI Content.
             </h1>
-            <p class="text-gray-400 text-lg md:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto">
+            <p class="text-gray-400 text-lg md:text-2xl mb-12 leading-relaxed max-w-3xl">
                 Stop guessing. Start scaling. Get high-retention, faceless reels designed specifically for the AI automation niche.
             </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="vault.html" class="px-12 py-6 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-black text-lg shadow-xl shadow-cyan-900/40 hover:scale-[1.02] transition text-center">Access the Weekly Vault</a>
-                <a href="#mystery" class="px-12 py-6 bg-white/5 border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 transition text-center text-white">Unlock Mystery Sample ($9)</a>
+            <div class="flex flex-col md:flex-row gap-6 justify-center w-full max-w-2xl">
+                <a href="vault.html" class="flex-1 px-8 py-6 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-black text-lg shadow-xl shadow-cyan-900/40 hover:scale-[1.02] transition">Access the Weekly Vault</a>
+                <a href="#mystery" class="flex-1 px-8 py-6 bg-white/5 border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 transition">Unlock Mystery Sample ($9)</a>
             </div>
         </section>
 
-        <section id="about" class="py-32">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section id="about" class="py-32 border-t border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-left">
                 <div>
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 italic">What is <span class="text-cyan-400">ReelOSAI?</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-black mb-8 italic uppercase leading-none">What is <br><span class="text-cyan-400">ReelOSAI?</span></h2>
                     <p class="text-gray-400 text-xl leading-relaxed mb-8">
-                        Most creators fail because they spend 90% of their time editing and only 10% on strategy. ReelOSAI flips the script. 
+                        Most creators fail because they spend 90% of their time editing. ReelOSAI flips the script.
                     </p>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">01</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Done-For-You Visuals:</span> 4K tech-noir aesthetic clips that stop the scroll instantly.</p>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="text-cyan-400 font-black text-3xl">01</div>
+                            <p class="text-gray-300 text-lg"><span class="text-white font-bold block">Done-For-You Visuals</span> 4K tech-noir clips that stop the scroll instantly.</p>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">02</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Psychological Hooks:</span> Copywritten openings designed to maximize watch time and retention.</p>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">03</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Niche Intelligence:</span> We track the AI trends so you don't have to.</p>
+                        <div class="flex gap-6">
+                            <div class="text-cyan-400 font-black text-3xl">02</div>
+                            <p class="text-gray-300 text-lg"><span class="text-white font-bold block">Psychological Hooks</span> Copywritten openings designed to maximize watch time.</p>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-12 mystery-gradient opacity-80 rounded-[40px] border-white/20">
-                    <div class="text-center py-20">
-                        <p class="text-sm font-black tracking-[0.3em] uppercase opacity-50 text-white">System Status</p>
-                        <p class="text-5xl font-black mt-4 text-white">OPERATIONAL</p>
-                    </div>
+                <div class="glass-card p-12 mystery-gradient opacity-90 rounded-[40px] border-white/20 text-center">
+                    <p class="text-sm font-black tracking-[0.3em] uppercase opacity-50 mb-4">System Status</p>
+                    <p class="text-6xl font-black glow-cyan">OPERATIONAL</p>
                 </div>
             </div>
         </section>
 
-        <section id="subscribe" class="py-32">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-7xl font-black mb-4 uppercase">Choose Your Leverage</h2>
-                <p class="text-gray-400 text-xl">The Vault updates every Monday at 09:00 EST.</p>
-            </div>
-
+        <section id="pricing" class="py-32 border-t border-white/5">
+            <h2 class="text-5xl md:text-7xl font-black mb-16 uppercase">Choose Your Leverage</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div id="mystery" class="glass-card p-10 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2 uppercase">Mystery Sample</h3>
-                        <p class="text-gray-500 text-sm mb-6">One-time test drive of the OS.</p>
-                        <div class="text-4xl font-black mb-8">$9</div>
-                        <ul class="space-y-4 text-sm text-gray-400">
-                            <li>✓ 1 Premium Visual Asset</li>
-                            <li>✓ 1 Viral Caption Script</li>
-                            <li>✓ Raw File Access</li>
-                        </ul>
-                    </div>
-                    <button class="w-full mt-10 py-4 bg-white/10 border border-white/20 rounded-xl font-bold hover:bg-white/20 transition text-white">Unlock Sample</button>
+                <div id="mystery" class="glass-card p-10 flex flex-col items-center">
+                    <h3 class="text-2xl font-bold mb-6 uppercase">Mystery Sample</h3>
+                    <div class="text-5xl font-black mb-8">$9</div>
+                    <ul class="text-gray-400 space-y-3 mb-10 text-sm">
+                        <li>✓ 1 Premium Visual Asset</li>
+                        <li>✓ 1 Viral Caption Script</li>
+                    </ul>
+                    <button class="w-full py-4 bg-white/10 rounded-xl font-bold hover:bg-white/20 transition">Unlock Sample</button>
                 </div>
 
-                <div class="glass-card p-10 pricing-glow flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-cyan-500 text-black px-4 py-1 text-[10px] font-black uppercase tracking-tighter">Recommended</div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2 uppercase">The Weekly Vault</h3>
-                        <p class="text-cyan-400 font-bold text-sm mb-6 italic">The Full Operating System</p>
-                        <div class="text-4xl font-black mb-8">$49 <span class="text-lg text-gray-600">/mo</span></div>
-                        <ul class="space-y-4 text-sm text-gray-400">
-                            <li>✓ 10+ Weekly 4K Visual Drops</li>
-                            <li>✓ Full Library of Hooks & Scripts</li>
-                            <li>✓ Private Discord Access</li>
-                            <li>✓ Unlimited Usage License</li>
-                        </ul>
-                    </div>
-                    <a href="vault.html" class="w-full mt-10 py-4 bg-cyan-500 text-black font-black rounded-xl uppercase tracking-widest shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition text-center block">Join The Vault</a>
+                <div class="glass-card p-10 border-cyan-500/50 shadow-[0_0_30px_rgba(0,210,255,0.1)] flex flex-col items-center relative">
+                    <div class="absolute top-0 right-0 bg-cyan-500 text-black px-4 py-1 text-[10px] font-black uppercase">Best Value</div>
+                    <h3 class="text-2xl font-bold mb-6 uppercase">The Weekly Vault</h3>
+                    <div class="text-5xl font-black mb-8">$49<span class="text-lg text-gray-500">/mo</span></div>
+                    <ul class="text-gray-400 space-y-3 mb-10 text-sm">
+                        <li>✓ 10+ Weekly 4K Visual Drops</li>
+                        <li>✓ Private Discord Access</li>
+                    </ul>
+                    <a href="vault.html" class="w-full py-4 bg-cyan-500 text-black font-black rounded-xl uppercase tracking-widest hover:scale-[1.02] transition">Join The Vault</a>
                 </div>
             </div>
         </section>
 
-        <footer class="py-20 border-t border-white/10 text-center">
-            <div class="text-xl font-black italic mb-8 opacity-50">ReelOS<span class="text-cyan-400">AI</span></div>
-            <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">© 2026 Designed for the 1% of Creators</p>
+        <footer class="py-20 border-t border-white/10 opacity-40 text-[10px] uppercase tracking-[0.4em]">
+            © 2026 ReelOSAI | Built for the 1%
         </footer>
 
     </main>
