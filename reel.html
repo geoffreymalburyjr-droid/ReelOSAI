@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Your Reel | ReelOSAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --neon-cyan: #00d2ff; --neon-purple: #9d50bb; }
+        body { background-color: #030005; color: white; font-family: 'Inter', sans-serif; }
+        .grid-bg {
+            background-image: linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(157, 80, 187, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .glass-card { 
+            background: rgba(15, 5, 25, 0.6); 
+            border: 1px solid rgba(157, 80, 187, 0.2); 
+            backdrop-filter: blur(20px); 
+        }
+    </style>
+</head>
+<body class="grid-bg min-h-screen flex flex-col items-center p-6">
 
+    <nav class="w-full flex justify-start p-8">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo" class="h-14 w-auto drop-shadow-[0_0_10px_rgba(0,210,255,0.5)]">
+        </a>
+    </nav>
+
+    <main class="max-w-3xl w-full py-10">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-black italic uppercase mb-4">The <span class="text-gradient">Instant Drop</span></h1>
+            <p class="text-gray-400 uppercase tracking-widest text-sm font-bold">A "Done-For-You" Viral Asset</p>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl mb-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-20">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 14"/></svg>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-8 italic uppercase border-b border-white/10 pb-4">Product Specifications:</h2>
+            
+            <div class="space-y-8">
+                <div class="flex items-center gap-6">
+                    <div class="h-12 w-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-black">01</div>
+                    <p class="font-bold uppercase tracking-tight text-lg">Curated "Winner" Topic <span class="block text-xs font-normal text-gray-500 mt-1">Randomly selected from our highest performing AI/Wealth niche templates.</span></p>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="h-12 w-12 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-black">02</div>
+                    <p class="font-bold uppercase tracking-tight text-lg">Full Neural Production <span class="block text-xs font-normal text-gray-500 mt-1">4K cinematic visuals, Pro-voiceover, and viral-logic captions included.</span></p>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="h-12 w-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-black">03</div>
+                    <p class="font-bold uppercase tracking-tight text-lg">Zero-Edit Delivery <span class="block text-xs font-normal text-gray-500 mt-1">Receive a finished MP4 file. Download, transfer to mobile, and post.</span></p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-10 border-t border-white/10">
+                <a href="https://buy.stripe.com/your_9_dollar_link" class="block w-full py-6 bg-gradient-to-r from-cyan-400 to-purple-500 text-black text-center font-black uppercase rounded-2xl text-2xl hover:scale-105 transition shadow-[0_0_40px_rgba(157,80,187,0.4)]">
+                    Unlock Reel — $9
+                </a>
+                <p class="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-6">Instant Access via Email after Checkout</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="text-gray-600 hover:text-white text-[10px] uppercase tracking-[0.4em] font-black transition">← Return to System</a>
+    </main>
+
+</body>
+</html>
