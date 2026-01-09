@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReelOSAI | The Content OS</title>
+    <title>ReelOS AI | Generate the 1% Content</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        :root { --neon-cyan: #00d2ff; --neon-purple: #9d50bb; }
+        body { background-color: #030005; color: white; font-family: 'Inter', sans-serif; }
         .grid-bg {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(157, 80, 187, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
-        .text-glow { text-shadow: 0 0 20px rgba(0, 210, 255, 0.5); }
+        .text-gradient {
+            background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .btn-glow { box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); transition: 0.3s; }
+        .btn-glow:hover { box-shadow: 0 0 35px rgba(157, 80, 187, 0.5); transform: scale(1.02); }
     </style>
 </head>
 <body class="grid-bg min-h-screen">
-    <nav class="flex justify-between items-center px-8 py-8">
-        <div class="flex items-center gap-3">
-            <img src="logo.png" alt="Logo" class="h-14 w-auto">
-            <span class="text-2xl font-black italic uppercase">ReelOS<span class="text-cyan-400">AI</span></span>
+    <nav class="flex justify-between items-center px-8 py-6">
+        <div class="flex items-center gap-4">
+            <img src="logo.png" alt="Logo" class="h-14 w-auto drop-shadow-[0_0_10px_rgba(0,210,255,0.6)]">
+            <span class="text-2xl font-black italic tracking-tighter uppercase">ReelOS<span class="text-gradient">AI</span></span>
         </div>
-        <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-500">
-            <a href="#" class="hover:text-white">About</a>
-            <a href="#" class="hover:text-white">Pricing</a>
-        </div>
-        <a href="vault.html" class="px-6 py-2 bg-cyan-500 text-black rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-cyan-400 transition">Launch OS</a>
+        <a href="vault.html" class="px-6 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Access Vault</a>
     </nav>
 
-    <main class="flex flex-col items-center justify-center text-center px-6 pt-20">
-        <div class="inline-block px-4 py-1 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 mb-8">
-            The Content Operating System
+    <main class="max-w-6xl mx-auto px-6 pt-20 text-center">
+        <div class="inline-block px-4 py-1 border border-cyan-500/30 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-6 bg-cyan-500/5">
+            System Status: Operational
         </div>
-        <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">
-            Gain the <span class="text-cyan-400 text-glow">Unfair</span><br>
-            <span class="text-cyan-400 text-glow">Advantage</span> in AI<br>Content.
+        <h1 class="text-7xl md:text-8xl font-black italic uppercase tracking-tighter mb-8 leading-none">
+            Gain the <span class="text-gradient">Unfair Advantage</span><br>in AI Content.
         </h1>
-        <p class="text-gray-500 max-w-2xl mx-auto mb-12 text-sm uppercase tracking-widest leading-relaxed">
-            Stop guessing. Start scaling. Get high-retention, faceless reels designed specifically for the AI automation niche.
+        <p class="text-gray-400 max-w-xl mx-auto mb-12 text-sm uppercase tracking-widest leading-relaxed">
+            Automated neural hooks. Viral retention logic. <br>The operating system for modern attention.
         </p>
-        <div class="flex flex-col md:flex-row gap-4">
-            <a href="vault.html" class="px-10 py-5 bg-cyan-500 text-black font-black uppercase rounded-2xl text-lg hover:bg-cyan-400 transition shadow-[0_0_30px_rgba(0,210,255,0.3)]">
-                Access the Weekly Vault
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <a href="vault.html" class="btn-glow px-10 py-5 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black uppercase rounded-2xl text-lg">
+                Enter The Vault
             </a>
-            <a href="#" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-black uppercase rounded-2xl text-lg hover:bg-white/10 transition">
-                Unlock Mystery Sample ($9)
+            <a href="https://buy.stripe.com/your_9_dollar_link" class="px-8 py-5 border border-purple-500/30 bg-purple-500/5 rounded-2xl flex items-center gap-4 hover:bg-purple-500/10 transition">
+                <div class="text-left">
+                    <div class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Instant Delivery</div>
+                    <div class="text-sm font-bold">Unlock Viral Reel <span class="text-white/40">— $9</span></div>
+                </div>
             </a>
         </div>
     </main>
