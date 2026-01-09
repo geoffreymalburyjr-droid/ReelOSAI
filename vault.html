@@ -18,9 +18,20 @@
         .pricing-card:hover { transform: translateY(-5px); border-color: #00D2FF; }
         .check-blue { color: #00D2FF; font-weight: bold; margin-right: 8px; }
         .check-grey { color: #444; font-weight: bold; margin-right: 8px; }
+        
+        /* Navigation Style */
+        .nav-link { font-size: 10px; letter-spacing: 0.2em; transition: 0.3s; opacity: 0.5; }
+        .nav-link:hover { opacity: 1; color: #00D2FF; }
     </style>
 </head>
 <body class="grid-bg min-h-screen flex flex-col items-center justify-center p-6">
+
+    <div class="fixed top-8 left-8 z-50">
+        <a href="index.html" class="nav-link flex items-center gap-2 uppercase font-black">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Exit to Home
+        </a>
+    </div>
 
     <div class="max-w-6xl w-full">
         <div id="progress-container" class="max-w-2xl mx-auto w-full">
@@ -136,15 +147,12 @@
 
     <script>
         function nextStep(step) {
-            // Hide all steps
             document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            // Show the current step
             const targetStep = document.getElementById('step' + step);
             if (targetStep) {
                 targetStep.classList.add('active');
             }
 
-            // Progress bar logic
             if(step === 7) {
                 document.getElementById('progress-container').style.display = 'none';
             } else {
@@ -154,7 +162,6 @@
                 document.getElementById('step-label').innerText = 'Step ' + step + ' of ' + totalSteps;
                 document.getElementById('percent-label').innerText = Math.round(progressPercentage) + '%';
             }
-            // Scroll to top of the card on each step
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
