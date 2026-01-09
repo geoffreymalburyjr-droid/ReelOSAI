@@ -11,113 +11,81 @@
         body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
         .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
         .glow-cyan { text-shadow: 0 0 15px rgba(0, 210, 255, 0.6); color: #00D2FF; }
-        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; }
+        .vault-border { border: 1px solid #00D2FF; box-shadow: 0 0 50px rgba(0, 210, 255, 0.1); }
         .mystery-gradient { background: linear-gradient(180deg, #4A1D96 0%, #064E3B 100%); }
-        .pricing-glow { border: 1px solid #00D2FF; box-shadow: 0 0 40px rgba(0, 210, 255, 0.15); }
     </style>
 </head>
 <body class="grid-bg min-h-screen">
 
-    <nav class="flex justify-between items-center max-w-6xl mx-auto p-6 mb-12">
+    <nav class="flex justify-between items-center max-w-6xl mx-auto p-6">
         <div class="text-2xl font-black italic">ReelOS<span class="text-cyan-400">AI</span></div>
-        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-            <a href="#about" class="hover:text-cyan-400 transition">About</a>
-            <a href="#subscribe" class="hover:text-cyan-400 transition">Pricing</a>
+        <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
+            <a href="#about" class="hover:text-white transition">The System</a>
+            <a href="#vault" class="hover:text-white transition">The Vault</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
         </div>
-        <a href="#subscribe" class="bg-cyan-500 text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,210,255,0.4)] hover:scale-105 transition">Launch OS</a>
+        <a href="#vault" class="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition">Launch OS</a>
     </nav>
 
     <main class="max-w-6xl mx-auto px-6">
         
-        <section class="text-center py-20">
-            <div class="inline-block px-4 py-1 border border-white/20 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6 text-gray-400 bg-black">
-                The Content Operating System
-            </div>
-            <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] max-w-5xl mx-auto">
-                Gain the <span class="glow-cyan italic">Unfair Advantage</span> in AI Content.
+        <section class="text-center py-24">
+            <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.85]">
+                Scale Your <span class="glow-cyan italic">Attention.</span>
             </h1>
-            <p class="text-gray-400 text-lg md:text-2xl mb-12 leading-relaxed max-w-3xl mx-auto">
-                Stop guessing. Start scaling. Get high-retention, faceless reels designed specifically for the AI automation niche.
+            <p class="text-gray-400 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium">
+                The Operating System for high-retention AI content. Built for the 1% of creators.
             </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#subscribe" class="px-12 py-6 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-black text-lg shadow-xl shadow-cyan-900/40 hover:scale-[1.02] transition">Access the Weekly Vault</a>
-                <a href="#mystery" class="px-12 py-6 bg-white/5 border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/10 transition">Unlock Mystery Sample ($9)</a>
-            </div>
+            <a href="#vault" class="inline-block px-12 py-6 bg-cyan-500 text-black rounded-2xl font-black text-xl shadow-2xl shadow-cyan-500/20 hover:scale-105 transition">Access the Weekly Vault</a>
         </section>
 
-        <section id="about" class="py-32">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 italic">What is <span class="text-cyan-400">ReelOSAI?</span></h2>
-                    <p class="text-gray-400 text-xl leading-relaxed mb-8">
-                        Most creators fail because they spend 90% of their time editing and only 10% on strategy. ReelOSAI flips the script. 
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">01</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Done-For-You Visuals:</span> 4K tech-noir aesthetic clips that stop the scroll instantly.</p>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">02</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Psychological Hooks:</span> Copywritten openings designed to maximize watch time and retention.</p>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-cyan-400 font-black text-2xl">03</div>
-                            <p class="text-gray-300"><span class="text-white font-bold">Niche Intelligence:</span> We track the AI trends so you don't have to.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card p-12 mystery-gradient opacity-80 rounded-[40px] border-white/20">
-                    <div class="text-center py-20">
-                        <p class="text-sm font-black tracking-[0.3em] uppercase opacity-50">System Status</p>
-                        <p class="text-5xl font-black mt-4">OPERATIONAL</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="subscribe" class="py-32">
+        <section id="vault" class="py-24 border-t border-white/10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-7xl font-black mb-4">Choose Your Leverage</h2>
-                <p class="text-gray-400 text-xl">The Vault updates every Monday at 09:00 EST.</p>
+                <div class="inline-block px-4 py-1 border border-cyan-500/30 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-4 text-cyan-400 bg-cyan-500/5">Updated Every Monday</div>
+                <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase">The Weekly Vault</h2>
+                <p class="text-gray-500 text-lg">Your all-access pass to the most elite assets in the AI niche.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div id="mystery" class="glass-card p-10 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2 uppercase">Mystery Sample</h3>
-                        <p class="text-gray-500 text-sm mb-6">One-time test drive of the OS.</p>
-                        <div class="text-4xl font-black mb-8">$9</div>
-                        <ul class="space-y-4 text-sm text-gray-400">
-                            <li>✓ 1 Premium Visual Asset</li>
-                            <li>✓ 1 Viral Caption Script</li>
-                            <li>✓ Raw File Access</li>
-                        </ul>
-                    </div>
-                    <button class="w-full mt-10 py-4 bg-white/10 border border-white/20 rounded-xl font-bold hover:bg-white/20 transition">Unlock Sample</button>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="glass-card p-8">
+                    <div class="text-cyan-400 mb-6"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">4K Visual Assets</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">10+ New "Tech-Noir" and "Cyber-Industrial" clips every week. Rendered in 4K for maximum clarity.</p>
                 </div>
+                <div class="glass-card p-8">
+                    <div class="text-cyan-400 mb-6"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg></div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Viral Hook Scripts</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Psychology-backed opening lines proven to stop the scroll in the first 1.5 seconds.</p>
+                </div>
+                <div class="glass-card p-8">
+                    <div class="text-cyan-400 mb-6"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+                    <h3 class="text-xl font-bold mb-2 uppercase">Trend Intel</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Weekly report on what is moving the needle in the AI niche. Don't chase the meta, be the meta.</p>
+                </div>
+            </div>
 
-                <div class="glass-card p-10 pricing-glow flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-cyan-500 text-black px-4 py-1 text-[10px] font-black uppercase tracking-tighter">Recommended</div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2 uppercase">The Weekly Vault</h3>
-                        <p class="text-cyan-400 font-bold text-sm mb-6 italic italic">The Full Operating System</p>
-                        <div class="text-4xl font-black mb-8">$49 <span class="text-lg text-gray-600">/mo</span></div>
-                        <ul class="space-y-4 text-sm text-gray-400">
-                            <li>✓ 10+ Weekly 4K Visual Drops</li>
-                            <li>✓ Full Library of Hooks & Scripts</li>
-                            <li>✓ Private Discord Access</li>
-                            <li>✓ Unlimited Usage License</li>
-                        </ul>
+            <div class="max-w-2xl mx-auto glass-card vault-border p-12 text-center relative overflow-hidden">
+                <div class="mystery-gradient absolute inset-0 opacity-20 blur-3xl"></div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-black mb-4 uppercase">Unlock The Vault</h3>
+                    <div class="flex justify-center items-baseline gap-2 mb-8">
+                        <span class="text-7xl font-black">$49</span>
+                        <span class="text-gray-500 text-xl">/ MONTH</span>
                     </div>
-                    <button class="w-full mt-10 py-4 bg-cyan-500 text-black font-black rounded-xl uppercase tracking-widest shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition">Join The Vault</button>
+                    <ul class="space-y-4 text-gray-400 mb-10 text-lg">
+                        <li class="flex items-center justify-center gap-2"><span class="text-cyan-400 font-bold">✓</span> Full Library Access</li>
+                        <li class="flex items-center justify-center gap-2"><span class="text-cyan-400 font-bold">✓</span> Discord Community Pass</li>
+                        <li class="flex items-center justify-center gap-2"><span class="text-cyan-400 font-bold">✓</span> Commercial License Included</li>
+                    </ul>
+                    <button class="w-full py-6 bg-white text-black font-black rounded-2xl uppercase tracking-[0.2em] text-sm hover:bg-cyan-400 transition transform hover:scale-[1.02]">Start My Subscription</button>
+                    <p class="mt-6 text-[10px] text-gray-600 uppercase tracking-widest">Instant Delivery. Cancel Anytime.</p>
                 </div>
             </div>
         </section>
 
-        <footer class="py-20 border-t border-white/10 text-center">
-            <div class="text-xl font-black italic mb-8 opacity-50">ReelOS<span class="text-cyan-400">AI</span></div>
-            <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">© 2026 Designed for the 1% of Creators</p>
+        <footer class="py-20 text-center opacity-30 text-[10px] uppercase tracking-[0.5em]">
+            © 2026 ReelOSAI | The Content Operating System
         </footer>
 
     </main>
