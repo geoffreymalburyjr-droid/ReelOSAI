@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReelOS AI | Generate the 1% Content</title>
+    <title>ReelOS AI | Viral Content Operating System</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -21,7 +21,7 @@
             background-image: 
                 linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(157, 80, 187, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
+            background-size: 50px 50px;
         }
 
         .text-gradient {
@@ -30,74 +30,71 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .btn-glow {
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-            transition: 0.3s;
-        }
-
-        .btn-glow:hover {
-            box-shadow: 0 0 35px rgba(157, 80, 187, 0.5);
-            transform: scale(1.02);
-        }
-
-        .unlock-card {
+        /* Mystery Button Styling */
+        .mystery-btn {
             background: rgba(157, 80, 187, 0.05);
-            border: 1px solid rgba(157, 80, 187, 0.2);
-            transition: 0.3s;
+            border: 1px solid rgba(157, 80, 187, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .unlock-card:hover {
-            border-color: var(--neon-cyan);
-            background: rgba(0, 210, 255, 0.05);
+        .mystery-btn:hover {
+            border-color: var(--neon-purple);
+            background: rgba(157, 80, 187, 0.15);
+            box-shadow: 0 0 25px rgba(157, 80, 187, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .main-glow {
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
         }
     </style>
 </head>
-<body class="grid-bg">
+<body class="grid-bg min-h-screen flex flex-col">
 
-    <nav class="flex justify-between items-center px-8 py-6">
+    <nav class="flex justify-between items-center px-8 py-8">
         <div class="flex items-center gap-4">
-            <img src="logo.png" alt="Logo" class="h-14 w-auto drop-shadow-[0_0_10px_rgba(0,210,255,0.6)]">
+            <img src="logo.png" alt="ReelOS Logo" class="h-14 w-auto drop-shadow-[0_0_10px_rgba(0,210,255,0.5)]">
             <span class="text-2xl font-black italic tracking-tighter uppercase">ReelOS<span class="text-gradient">AI</span></span>
         </div>
-        <a href="vault.html" class="px-6 py-2 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Access Vault</a>
+        <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
+            <a href="#" class="hover:text-cyan-400">About</a>
+            <a href="#" class="hover:text-cyan-400">Pricing</a>
+        </div>
+        <a href="vault.html" class="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Launch OS</a>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 pt-20 pb-32 text-center">
-        <div class="inline-block px-4 py-1 border border-cyan-500/30 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-6 bg-cyan-500/5">
-            System Status: Operational
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6">
+        <div class="inline-block px-4 py-1 border border-cyan-500/20 rounded-full text-[10px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-8 bg-cyan-500/5">
+            The Content Operating System
         </div>
         
-        <h1 class="text-7xl md:text-8xl font-black italic uppercase tracking-tighter mb-8 leading-none">
-            Scale to the <span class="text-gradient">1%</span><br>of Creators
+        <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">
+            Gain the <span class="text-gradient">Unfair</span><br>Advantage in AI.
         </h1>
         
-        <p class="text-gray-400 max-w-xl mx-auto mb-12 text-sm uppercase tracking-widest leading-relaxed">
-            Automated neural hooks. Viral retention logic. <br>The operating system for modern attention.
+        <p class="text-gray-400 max-w-2xl mx-auto mb-12 text-sm md:text-base uppercase tracking-widest leading-relaxed">
+            Stop guessing. Start scaling. Get high-retention, faceless reels <br class="hidden md:block"> designed specifically for the AI automation niche.
         </p>
 
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-            <a href="vault.html" class="btn-glow px-10 py-5 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black uppercase rounded-2xl text-lg transition-all">
-                Enter The Vault
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <a href="vault.html" class="main-glow px-10 py-5 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black uppercase rounded-2xl text-lg hover:scale-105 transition">
+                Access The Weekly Vault
             </a>
             
-            <a href="https://buy.stripe.com/your_9_dollar_link" class="unlock-card group px-8 py-5 rounded-2xl flex items-center gap-4 transition-all">
-                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center border border-purple-500/40">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d50bb" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                </div>
+            <a href="https://buy.stripe.com/your_9_dollar_link" class="mystery-btn group px-8 py-5 rounded-2xl flex items-center gap-4">
                 <div class="text-left">
-                    <div class="text-[10px] font-black text-purple-400 uppercase tracking-widest">Instant Delivery</div>
-                    <div class="text-sm font-bold">Unlock Viral Reel <span class="text-white/40">— $9</span></div>
+                    <div class="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-1">One-Time Download</div>
+                    <div class="text-sm font-bold flex items-center gap-2">
+                        Unlock Mystery Sample <span class="text-white/40">($9)</span>
+                    </div>
                 </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-purple-500 group-hover:animate-bounce"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             </a>
         </div>
     </main>
 
-    <footer class="py-20 border-t border-white/10 text-center">
-        <div class="flex justify-center items-center gap-3 mb-8 opacity-40">
-            <img src="logo.png" alt="" class="h-8 w-auto grayscale">
-            <div class="text-xl font-black italic">ReelOS<span class="text-gradient">AI</span></div>
-        </div>
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">© 2026 Designed for the 1%</p>
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.6em]">© 2026 Powered by ReelOS Intelligence</p>
     </footer>
 
 </body>
