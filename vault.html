@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurator | ReelOSAI</title>
+    <title>OS Configurator | ReelOSAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
@@ -16,8 +16,8 @@
         .option-btn:hover { border-color: #00D2FF; background: rgba(0,210,255,0.05); }
         .pricing-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
         .pricing-card:hover { transform: translateY(-5px); border-color: #00D2FF; }
-        .check-blue { color: #00D2FF; font-weight: bold; }
-        .check-grey { color: #444; font-weight: bold; }
+        .check-blue { color: #00D2FF; font-weight: bold; margin-right: 8px; }
+        .check-grey { color: #444; font-weight: bold; margin-right: 8px; }
     </style>
 </head>
 <body class="grid-bg min-h-screen flex flex-col items-center justify-center p-6">
@@ -34,20 +34,52 @@
         </div>
 
         <form id="masterForm">
-            
             <div class="max-w-2xl mx-auto">
+                
                 <div class="step-content active" id="step1">
                     <div class="glass-card p-10">
                         <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Target Niche</h2>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation</b><br><span class="text-xs text-gray-500">Business & SaaS</span></button>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth</b><br><span class="text-xs text-gray-500">Finance & Future Markets</span></button>
+                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation Agency</b><br><span class="text-xs text-gray-500">Business, SaaS, & Productivity</span></button>
+                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth</b><br><span class="text-xs text-gray-500">Crypto, Finance, & Trading</span></button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step2">
+                    <div class="glass-card p-10">
+                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Neural Voice</h2>
+                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Alpha (Male)</b><br><span class="text-xs text-gray-500">Deep, commanding, high-authority</span></button>
+                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Oracle (Female)</b><br><span class="text-xs text-gray-500">Sophisticated, calm, mysterious</span></button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step3">
+                    <div class="glass-card p-10">
+                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Caption Style</h2>
+                        <button type="button" onclick="nextStep(4)" class="option-btn"><b>Tech-Cyan Glow</b><br><span class="text-xs text-gray-500">Futuristic, high-contrast neon</span></button>
+                        <button type="button" onclick="nextStep(4)" class="option-btn"><b>Minimalist White</b><br><span class="text-xs text-gray-500">Clean, elegant typography</span></button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step4">
+                    <div class="glass-card p-10">
+                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Background Logic</h2>
+                        <button type="button" onclick="nextStep(5)" class="option-btn"><b>Dark Ambient</b><br><span class="text-xs text-gray-500">Subtle, cinematic tension</span></button>
+                        <button type="button" onclick="nextStep(5)" class="option-btn"><b>Industrial Phonk</b><br><span class="text-xs text-gray-500">High-energy, fast-paced rhythm</span></button>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step5">
+                    <div class="glass-card p-10">
+                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Visual Engine</h2>
+                        <button type="button" onclick="nextStep(6)" class="option-btn"><b>Unreal Engine 5</b><br><span class="text-xs text-gray-500">Hyper-realistic tech visuals</span></button>
+                        <button type="button" onclick="nextStep(6)" class="option-btn"><b>Noir-Anime</b><br><span class="text-xs text-gray-500">Hand-drawn cyberpunk aesthetic</span></button>
                     </div>
                 </div>
 
                 <div class="step-content" id="step6">
                     <div class="glass-card p-10 text-center">
                         <h2 class="text-3xl font-black mb-4 italic uppercase text-cyan-400">Automation Link</h2>
-                        <p class="text-xs text-gray-500 mb-8 uppercase tracking-widest leading-relaxed">Input @handle for Auto-Post (Elite Only)</p>
+                        <p class="text-xs text-gray-500 mb-8 uppercase tracking-widest">Input handle for Auto-Post feature (Elite Only)</p>
                         <input type="text" placeholder="@your.instagram" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl mb-6 focus:border-cyan-500 outline-none text-center text-xl font-bold">
                         <button type="button" onclick="nextStep(7)" class="w-full py-5 bg-white text-black font-black rounded-xl uppercase tracking-widest hover:bg-cyan-400 transition">Continue</button>
                     </div>
@@ -56,15 +88,14 @@
 
             <div class="step-content" id="step7">
                 <div class="text-center mb-12">
-                    <h2 class="text-5xl font-black italic uppercase italic">Select Your <span class="text-cyan-400">Leverage</span></h2>
+                    <h2 class="text-5xl font-black italic uppercase">Select Your <span class="text-cyan-400">Leverage</span></h2>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                    
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="glass-card p-8 pricing-card flex flex-col">
-                        <h3 class="text-xl font-black mb-2 uppercase">Starter</h3>
+                        <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Starter</h3>
                         <div class="text-4xl font-black mb-6">$19<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                        <ul class="space-y-4 text-sm mb-10 flex-grow">
+                        <ul class="space-y-4 text-sm mb-10 flex-grow text-gray-400">
                             <li><span class="check-blue">✓</span> 5 Reels Per Week</li>
                             <li><span class="check-blue">✓</span> 4K Visual Assets</li>
                             <li><span class="check-grey">✕</span> Custom Neural Voice</li>
@@ -75,7 +106,7 @@
 
                     <div class="glass-card p-8 pricing-card border-cyan-500/50 bg-cyan-500/5 flex flex-col relative shadow-[0_0_50px_rgba(0,210,255,0.1)]">
                         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-4 py-1 rounded text-[10px] font-black uppercase">Most Popular</div>
-                        <h3 class="text-xl font-black mb-2 uppercase text-cyan-400">Pro Vault</h3>
+                        <h3 class="text-xl font-black mb-2 uppercase text-cyan-400 tracking-tighter">Pro Vault</h3>
                         <div class="text-4xl font-black mb-6">$49<span class="text-sm text-gray-500 font-normal">/mo</span></div>
                         <ul class="space-y-4 text-sm mb-10 flex-grow">
                             <li><span class="check-blue">✓</span> 10 Reels Per Week</li>
@@ -87,7 +118,7 @@
                     </div>
 
                     <div class="glass-card p-8 pricing-card flex flex-col border-white/20 bg-white/5">
-                        <h3 class="text-xl font-black mb-2 uppercase">Elite Auto</h3>
+                        <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Elite Auto</h3>
                         <div class="text-4xl font-black mb-6">$99<span class="text-sm text-gray-500 font-normal">/mo</span></div>
                         <ul class="space-y-4 text-sm mb-10 flex-grow">
                             <li><span class="check-blue">✓</span> 10 Reels Per Week</li>
@@ -95,32 +126,36 @@
                             <li><span class="check-blue">✓</span> Custom Neural Voice</li>
                             <li><span class="check-blue">✓</span> Auto-Post to IG</li>
                         </ul>
-                        <button type="button" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black rounded-xl hover:scale-105 transition shadow-lg shadow-blue-500/20">Select Elite</button>
+                        <button type="button" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black rounded-xl hover:scale-105 transition">Select Elite</button>
                     </div>
-
                 </div>
-                <p class="text-center mt-12 text-[10px] text-gray-600 uppercase tracking-widest">Secure checkout powered by Stripe. No password required.</p>
+                <p class="text-center mt-12 text-[10px] text-gray-600 uppercase tracking-widest">Secure checkout powered by Stripe.</p>
             </div>
-
         </form>
     </div>
 
     <script>
         function nextStep(step) {
+            // Hide all steps
             document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            const currentStep = document.getElementById('step' + step);
-            currentStep.classList.add('active');
-            
-            // Hide progress bar on the last pricing step to give more room
-            if(step === 7) {
-                document.getElementById('progress-container').style.display = 'none';
+            // Show the current step
+            const targetStep = document.getElementById('step' + step);
+            if (targetStep) {
+                targetStep.classList.add('active');
             }
 
-            let totalSteps = 7;
-            let progress = (step / totalSteps) * 100;
-            document.getElementById('progress').style.width = progress + '%';
-            document.getElementById('step-label').innerText = 'Step ' + step + ' of ' + totalSteps;
-            document.getElementById('percent-label').innerText = Math.round(progress) + '%';
+            // Progress bar logic
+            if(step === 7) {
+                document.getElementById('progress-container').style.display = 'none';
+            } else {
+                let totalSteps = 7;
+                let progressPercentage = (step / totalSteps) * 100;
+                document.getElementById('progress').style.width = progressPercentage + '%';
+                document.getElementById('step-label').innerText = 'Step ' + step + ' of ' + totalSteps;
+                document.getElementById('percent-label').innerText = Math.round(progressPercentage) + '%';
+            }
+            // Scroll to top of the card on each step
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
