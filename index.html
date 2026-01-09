@@ -3,167 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS Configurator | ReelOSAI</title>
+    <title>ReelOSAI | The Content OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .grid-bg { background-image: linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px); background-size: 30px 30px; }
-        .step-content { display: none; }
-        .step-content.active { display: block; animation: slideIn 0.4s ease-out; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 24px; }
-        .option-btn { width: 100%; padding: 20px; text-align: left; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; margin-bottom: 10px; }
-        .option-btn:hover { border-color: #00D2FF; background: rgba(0,210,255,0.05); }
-        .pricing-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
-        .pricing-card:hover { transform: translateY(-5px); border-color: #00D2FF; }
-        .check-blue { color: #00D2FF; font-weight: bold; margin-right: 8px; }
-        .check-grey { color: #444; font-weight: bold; margin-right: 8px; }
-        
-        /* Navigation Style */
-        .nav-link { font-size: 10px; letter-spacing: 0.2em; transition: 0.3s; opacity: 0.5; }
-        .nav-link:hover { opacity: 1; color: #00D2FF; }
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+        .glow-cyan { text-shadow: 0 0 15px rgba(0, 210, 255, 0.6); color: #00D2FF; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .mystery-gradient { background: linear-gradient(180deg, #4A1D96 0%, #064E3B 100%); }
+        /* Smooth transition for resizing */
+        .transition-all-custom { transition: all 0.3s ease-in-out; }
     </style>
 </head>
-<body class="grid-bg min-h-screen flex flex-col items-center justify-center p-6">
+<body class="grid-bg min-h-screen">
+    
+    <nav class="flex justify-between items-center max-w-6xl mx-auto p-6 mb-8 md:mb-16">
+        <div class="text-2xl font-black italic">ReelOS<span class="text-cyan-400">AI</span></div>
+        <button class="bg-cyan-500 text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,210,255,0.4)] hover:scale-105 transition">Launch OS</button>
+    </nav>
 
-    <div class="fixed top-8 left-8 z-50">
-        <a href="index.html" class="nav-link flex items-center gap-2 uppercase font-black">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            Exit to Home
-        </a>
-    </div>
-
-    <div class="max-w-6xl w-full">
-        <div id="progress-container" class="max-w-2xl mx-auto w-full">
-            <div class="flex justify-between mb-4 text-[10px] uppercase tracking-[0.3em] text-gray-500 font-black">
-                <span id="step-label">Step 1 of 7</span>
-                <span id="percent-label">14%</span>
+    <main class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block px-4 py-1 border border-white/20 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6 text-gray-400 bg-black">
+                The Content Operating System
             </div>
-            <div class="w-full bg-white/5 h-1.5 mb-12 rounded-full overflow-hidden">
-                <div id="progress" class="bg-cyan-500 h-full transition-all duration-500" style="width: 14%"></div>
+            <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tight leading-tight max-w-4xl mx-auto">
+                Gain the <span class="glow-cyan italic">Unfair Advantage</span> in AI Content.
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
+                Stop guessing. Start scaling. Get high-retention, faceless reels designed specifically for the AI niche.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center mb-20">
+                <button class="px-12 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl font-bold text-base shadow-lg shadow-cyan-900/20 hover:opacity-90 transition">Access the Weekly Vault</button>
+                <button class="px-12 py-5 bg-white/5 border border-white/10 rounded-xl font-bold text-base hover:bg-white/10 transition">Unlock Mystery Sample ($9)</button>
             </div>
         </div>
 
-        <form id="masterForm">
-            <div class="max-w-2xl mx-auto">
-                
-                <div class="step-content active" id="step1">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Target Niche</h2>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation Agency</b><br><span class="text-xs text-gray-500">Business, SaaS, & Productivity</span></button>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth</b><br><span class="text-xs text-gray-500">Crypto, Finance, & Trading</span></button>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+            
+            <div class="glass-card p-12 relative overflow-hidden flex flex-col justify-center text-center">
+                <div class="mystery-gradient absolute inset-0 opacity-40 blur-3xl"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 border-2 border-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
                     </div>
+                    <h3 class="text-3xl font-bold mb-2">Mystery Sample #042</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-10">Viral Blueprint: AI Automation Niche</p>
+                    <button class="bg-white text-black px-12 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-gray-200 transition">Buy to Unlock</button>
                 </div>
+            </div>
 
-                <div class="step-content" id="step2">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Neural Voice</h2>
-                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Alpha (Male)</b><br><span class="text-xs text-gray-500">Deep, commanding, high-authority</span></button>
-                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Oracle (Female)</b><br><span class="text-xs text-gray-500">Sophisticated, calm, mysterious</span></button>
+            <div class="glass-card p-12 flex flex-col justify-center space-y-8">
+                <h4 class="text-3xl font-bold">Test the quality. <br>Keep the results.</h4>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <p class="text-base text-gray-400"><strong class="text-white block text-lg mb-1">1 Premium Visual Clip:</strong> 4K tech-noir aesthetic designed to stop the scroll.</p>
                     </div>
-                </div>
-
-                <div class="step-content" id="step3">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Caption Style</h2>
-                        <button type="button" onclick="nextStep(4)" class="option-btn"><b>Tech-Cyan Glow</b><br><span class="text-xs text-gray-500">Futuristic, high-contrast neon</span></button>
-                        <button type="button" onclick="nextStep(4)" class="option-btn"><b>Minimalist White</b><br><span class="text-xs text-gray-500">Clean, elegant typography</span></button>
+                    <div class="flex items-start gap-4">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <p class="text-base text-gray-400"><strong class="text-white block text-lg mb-1">High-Retention Hook:</strong> Psychology-backed opening text to boost watch time.</p>
                     </div>
-                </div>
-
-                <div class="step-content" id="step4">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Background Logic</h2>
-                        <button type="button" onclick="nextStep(5)" class="option-btn"><b>Dark Ambient</b><br><span class="text-xs text-gray-500">Subtle, cinematic tension</span></button>
-                        <button type="button" onclick="nextStep(5)" class="option-btn"><b>Industrial Phonk</b><br><span class="text-xs text-gray-500">High-energy, fast-paced rhythm</span></button>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step5">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-cyan-400">Visual Engine</h2>
-                        <button type="button" onclick="nextStep(6)" class="option-btn"><b>Unreal Engine 5</b><br><span class="text-xs text-gray-500">Hyper-realistic tech visuals</span></button>
-                        <button type="button" onclick="nextStep(6)" class="option-btn"><b>Noir-Anime</b><br><span class="text-xs text-gray-500">Hand-drawn cyberpunk aesthetic</span></button>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step6">
-                    <div class="glass-card p-10 text-center">
-                        <h2 class="text-3xl font-black mb-4 italic uppercase text-cyan-400">Automation Link</h2>
-                        <p class="text-xs text-gray-500 mb-8 uppercase tracking-widest">Input handle for Auto-Post feature (Elite Only)</p>
-                        <input type="text" placeholder="@your.instagram" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl mb-6 focus:border-cyan-500 outline-none text-center text-xl font-bold">
-                        <button type="button" onclick="nextStep(7)" class="w-full py-5 bg-white text-black font-black rounded-xl uppercase tracking-widest hover:bg-cyan-400 transition">Continue</button>
+                    <div class="flex items-start gap-4">
+                        <span class="text-green-500 text-xl">✓</span>
+                        <p class="text-base text-gray-400"><strong class="text-white block text-lg mb-1">Caption Framework:</strong> The exact structure to drive saves and shares.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="step-content" id="step7">
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl font-black italic uppercase">Select Your <span class="text-cyan-400">Leverage</span></h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 pricing-card flex flex-col">
-                        <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Starter</h3>
-                        <div class="text-4xl font-black mb-6">$19<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                        <ul class="space-y-4 text-sm mb-10 flex-grow text-gray-400">
-                            <li><span class="check-blue">✓</span> 5 Reels Per Week</li>
-                            <li><span class="check-blue">✓</span> 4K Visual Assets</li>
-                            <li><span class="check-grey">✕</span> Custom Neural Voice</li>
-                            <li><span class="check-grey">✕</span> Auto-Post to IG</li>
-                        </ul>
-                        <button type="button" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-bold hover:bg-white/10 transition">Select Starter</button>
-                    </div>
+        </div>
 
-                    <div class="glass-card p-8 pricing-card border-cyan-500/50 bg-cyan-500/5 flex flex-col relative shadow-[0_0_50px_rgba(0,210,255,0.1)]">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-4 py-1 rounded text-[10px] font-black uppercase">Most Popular</div>
-                        <h3 class="text-xl font-black mb-2 uppercase text-cyan-400 tracking-tighter">Pro Vault</h3>
-                        <div class="text-4xl font-black mb-6">$49<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                        <ul class="space-y-4 text-sm mb-10 flex-grow">
-                            <li><span class="check-blue">✓</span> 10 Reels Per Week</li>
-                            <li><span class="check-blue">✓</span> 4K Visual Assets</li>
-                            <li><span class="check-blue">✓</span> Custom Neural Voice</li>
-                            <li><span class="check-grey">✕</span> Auto-Post to IG</li>
-                        </ul>
-                        <button type="button" class="w-full py-4 bg-cyan-500 text-black font-black rounded-xl hover:scale-105 transition shadow-lg shadow-cyan-500/20">Select Pro</button>
-                    </div>
-
-                    <div class="glass-card p-8 pricing-card flex flex-col border-white/20 bg-white/5">
-                        <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Elite Auto</h3>
-                        <div class="text-4xl font-black mb-6">$99<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                        <ul class="space-y-4 text-sm mb-10 flex-grow">
-                            <li><span class="check-blue">✓</span> 10 Reels Per Week</li>
-                            <li><span class="check-blue">✓</span> 4K Visual Assets</li>
-                            <li><span class="check-blue">✓</span> Custom Neural Voice</li>
-                            <li><span class="check-blue">✓</span> Auto-Post to IG</li>
-                        </ul>
-                        <button type="button" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black rounded-xl hover:scale-105 transition">Select Elite</button>
-                    </div>
-                </div>
-                <p class="text-center mt-12 text-[10px] text-gray-600 uppercase tracking-widest">Secure checkout powered by Stripe.</p>
-            </div>
-        </form>
-    </div>
-
-    <script>
-        function nextStep(step) {
-            document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            const targetStep = document.getElementById('step' + step);
-            if (targetStep) {
-                targetStep.classList.add('active');
-            }
-
-            if(step === 7) {
-                document.getElementById('progress-container').style.display = 'none';
-            } else {
-                let totalSteps = 7;
-                let progressPercentage = (step / totalSteps) * 100;
-                document.getElementById('progress').style.width = progressPercentage + '%';
-                document.getElementById('step-label').innerText = 'Step ' + step + ' of ' + totalSteps;
-                document.getElementById('percent-label').innerText = Math.round(progressPercentage) + '%';
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+        <footer class="text-center text-[10px] md:text-xs text-gray-600 uppercase tracking-widest pb-20 border-t border-white/5 pt-10">
+            © 2026 ReelOSAI. Built for leverage.
+        </footer>
+    </main>
 </body>
 </html>
