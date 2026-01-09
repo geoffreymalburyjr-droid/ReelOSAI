@@ -6,106 +6,33 @@
     <title>OS Configurator | ReelOSAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --neon-cyan: #00d2ff;
-            --neon-purple: #9d50bb;
-        }
-
-        body { 
-            background-color: #030005; 
-            color: white; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden; 
-        }
-
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .grid-bg {
-            background-image: 
-                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(157, 80, 187, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
         }
-
         .step-content { display: none; }
         .step-content.active { display: block; animation: slideIn 0.4s ease-out; }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .glass-card {
-            background: rgba(15, 5, 25, 0.6);
-            border: 1px solid rgba(157, 80, 187, 0.2);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-        }
-
-        .option-btn {
-            width: 100%;
-            padding: 20px;
-            text-align: left;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .option-btn:hover {
-            border-color: var(--neon-cyan);
-            background: linear-gradient(45deg, rgba(0, 210, 255, 0.15), rgba(157, 80, 187, 0.15));
-            box-shadow: 0 0 25px rgba(157, 80, 187, 0.2);
-        }
-
-        .pricing-card { 
-            transition: all 0.3s ease; 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
-        }
-
-        .pricing-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--neon-cyan); 
-        }
-
-        .nav-link { 
-            font-size: 10px; 
-            letter-spacing: 0.2em; 
-            transition: 0.3s; 
-            opacity: 0.5; 
-            cursor: pointer; 
-        }
-        
-        .nav-link:hover { opacity: 1; color: var(--neon-cyan); }
-
-        #progress {
-            background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
-            box-shadow: 0 0 15px var(--neon-cyan);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 24px; }
+        .option-btn { width: 100%; padding: 20px; text-align: left; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; margin-bottom: 10px; }
+        .option-btn:hover { border-color: #00D2FF; background: rgba(0, 210, 255, 0.05); }
+        #progress { background: #00D2FF; box-shadow: 0 0 15px #00D2FF; }
     </style>
 </head>
 <body class="grid-bg min-h-screen flex flex-col items-center justify-center p-6">
-
     <div class="fixed top-8 left-8 z-50 flex items-center gap-6">
-        <a href="index.html" class="flex items-center group">
-            <img src="logo.png.png" alt="Logo" class="h-14 w-auto drop-shadow-[0_0_8px_rgba(0,210,255,0.6)] transition-transform group-hover:scale-105">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo" class="h-14 w-auto">
         </a>
-        
         <div class="flex gap-4 border-l border-white/10 pl-6">
-            <a href="index.html" class="nav-link flex items-center gap-2 uppercase font-black">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                Exit
-            </a>
-            <div id="back-btn" onclick="prevStep()" class="nav-link flex items-center gap-2 uppercase font-black" style="display: none;">Back</div>
+            <a href="index.html" class="text-[10px] font-black uppercase tracking-widest text-gray-500 hover:text-white">Exit</a>
         </div>
     </div>
 
-    <div class="max-w-6xl w-full">
-        <div id="progress-container" class="max-w-2xl mx-auto w-full">
+    <div class="max-w-2xl mx-auto w-full">
+        <div id="progress-container">
             <div class="flex justify-between items-center mb-4 text-[10px] uppercase tracking-[0.3em] text-gray-500 font-black">
                 <span id="step-label">Step 1 of 7</span>
                 <span id="percent-label">14%</span>
@@ -116,87 +43,24 @@
         </div>
 
         <form id="masterForm">
-            <div class="max-w-2xl mx-auto">
-                <div class="step-content active" id="step1">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-gradient">Target Niche</h2>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation Agency</b><br><span class="text-xs text-gray-500">Business, SaaS, & Infoproducts</span></button>
-                        <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth</b><br><span class="text-xs text-gray-500">Crypto, Finance, & Trading</span></button>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step2">
-                    <div class="glass-card p-10">
-                        <h2 class="text-3xl font-black mb-8 italic uppercase text-gradient">Neural Voice</h2>
-                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Alpha (Male)</b><br><span class="text-xs text-gray-500">Deep, commanding, high-authority</span></button>
-                        <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Oracle (Female)</b><br><span class="text-xs text-gray-500">Sophisticated, calm, mysterious</span></button>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step7">
-                    <div class="text-center mb-12">
-                        <h2 class="text-5xl font-black italic uppercase">Select Your <span class="text-gradient">Leverage</span></h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="glass-card p-8 pricing-card flex flex-col">
-                            <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Starter</h3>
-                            <div class="text-4xl font-black mb-6">$19<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                            <button type="button" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-bold hover:bg-white/10 transition">Select Starter</button>
-                        </div>
-
-                        <div class="glass-card p-8 pricing-card border-purple-500/50 bg-purple-500/5 flex flex-col relative shadow-[0_0_50px_rgba(157,80,187,0.2)]">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-purple-500 text-black px-4 py-1 rounded text-[10px] font-black uppercase">Most Popular</div>
-                            <h3 class="text-xl font-black mb-2 uppercase text-gradient tracking-tighter">Pro Vault</h3>
-                            <div class="text-4xl font-black mb-6">$49<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                            <a href="https://buy.stripe.com/your_link" class="w-full py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-black text-center font-black rounded-xl hover:scale-105 transition">Unlock Pro</a>
-                        </div>
-
-                        <div class="glass-card p-8 pricing-card flex flex-col">
-                            <h3 class="text-xl font-black mb-2 uppercase tracking-tighter">Elite Auto</h3>
-                            <div class="text-4xl font-black mb-6">$99<span class="text-sm text-gray-500 font-normal">/mo</span></div>
-                            <button type="button" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-bold hover:bg-white/10 transition">Select Elite</button>
-                        </div>
-                    </div>
+            <div class="step-content active" id="step1">
+                <div class="glass-card p-10">
+                    <h2 class="text-3xl font-black mb-8 italic uppercase">Target Niche</h2>
+                    <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation Agency</b><br><span class="text-xs text-gray-500">Business, SaaS, & Infoproducts</span></button>
+                    <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth</b><br><span class="text-xs text-gray-500">Crypto, Finance, & Trading</span></button>
                 </div>
             </div>
-        </form>
+            </form>
     </div>
 
     <script>
-        let currentStep = 1;
-
-        function updateProgress(step) {
-            const progressContainer = document.getElementById('progress-container');
-            const backBtn = document.getElementById('back-btn');
-            
-            if (step === 7) {
-                progressContainer.style.display = 'none';
-                backBtn.style.display = 'flex';
-            } else {
-                progressContainer.style.display = 'block';
-                backBtn.style.display = step > 1 ? 'flex' : 'none';
-                const totalSteps = 7;
-                let progressPercentage = (step / totalSteps) * 100;
-                document.getElementById('progress').style.width = progressPercentage + '%';
-                document.getElementById('step-label').innerText = 'Step ' + step + ' of ' + totalSteps;
-                document.getElementById('percent-label').innerText = Math.round(progressPercentage) + '%';
-            }
-        }
-
         function nextStep(step) {
-            currentStep = step;
             document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            const targetStep = document.getElementById('step' + step);
-            if (targetStep) { targetStep.classList.add('active'); }
-            updateProgress(step);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function prevStep() {
-            if (currentStep > 1) {
-                nextStep(currentStep - 1);
-            }
+            document.getElementById('step' + step).classList.add('active');
+            let progress = (step / 7) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('step-label').innerText = `Step ${step} of 7`;
+            document.getElementById('percent-label').innerText = Math.round(progress) + '%';
         }
     </script>
 </body>
