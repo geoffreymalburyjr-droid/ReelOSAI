@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join The Vault | ReelOSAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .glow-cyan { text-shadow: 0 0 15px rgba(0, 210, 255, 0.6); color: #00D2FF; }
+    </style>
+</head>
+<body class="grid-bg min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+            <a href="/" class="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-cyan-400 transition">← Back to Terminal</a>
+            <h1 class="text-5xl font-black mt-8 mb-6 uppercase leading-none">The <span class="glow-cyan italic">Vault</span></h1>
+            <p class="text-gray-400 text-lg mb-8">You are about to unlock the full Content Operating System. Weekly assets, viral hooks, and niche intelligence delivered every Monday.</p>
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3 text-sm font-bold">
+                    <span class="text-cyan-400">●</span> 10+ 4K Visuals Weekly
+                </div>
+                <div class="flex items-center gap-3 text-sm font-bold">
+                    <span class="text-cyan-400">●</span> Private Discord Access
+                </div>
+                <div class="flex items-center gap-3 text-sm font-bold">
+                    <span class="text-cyan-400">●</span> Commercial Usage License
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-10 border-[#00D2FF]/30 shadow-[0_0_50px_rgba(0,210,255,0.1)]">
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <h2 class="text-xl font-black uppercase">Pro Membership</h2>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">Billing Monthly</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-3xl font-black">$49</p>
+                </div>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-[10px] uppercase font-black text-gray-500 mb-2">Email Address</label>
+                    <input type="email" placeholder="name@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition">
+                </div>
+                <button type="button" class="w-full py-4 bg-cyan-500 text-black font-black rounded-xl uppercase tracking-widest text-xs shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition mt-4">
+                    Complete Subscription
+                </button>
+            </form>
+            
+            <p class="text-[10px] text-center mt-6 text-gray-600 uppercase tracking-widest">Secure encrypted checkout</p>
+        </div>
+    </div>
+
+</body>
+</html>
