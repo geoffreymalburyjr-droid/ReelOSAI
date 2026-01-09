@@ -3,160 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS Configurator | ReelOSAI</title>
+    <title>Configure Your OS | ReelOSAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --neon-cyan: #00d2ff; --neon-purple: #9d50bb; }
-        body { background-color: #030005; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .grid-bg { background-image: linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(157, 80, 187, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
-        .step-content { display: none; }
-        .step-content.active { display: block; animation: slideIn 0.4s ease-out; }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-        .glass-card { background: rgba(15, 5, 25, 0.6); border: 1px solid rgba(157, 80, 187, 0.2); backdrop-filter: blur(20px); border-radius: 24px; }
-        .option-btn { width: 100%; padding: 20px; text-align: left; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; margin-bottom: 10px; }
-        .option-btn:hover { border-color: var(--neon-cyan); background: rgba(0, 210, 255, 0.05); }
-        .text-gradient { background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        #progress { background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple)); box-shadow: 0 0 15px var(--neon-cyan); }
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        .grid-bg { background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+        .config-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(0, 210, 255, 0.2); backdrop-filter: blur(10px); border-radius: 24px; }
+        select { background: #111 !important; color: white; border: 1px solid #333; padding: 12px; border-radius: 8px; width: 100%; appearance: none; }
     </style>
 </head>
-<body class="grid-bg min-h-screen flex flex-col items-center justify-center p-6">
-    <div class="fixed top-6 left-6 z-50 flex items-center gap-4">
-        <a href="index.html"><img src="logo.png.png" alt="Logo" class="h-10 w-auto"></a>
-        <div id="back-btn" onclick="prevStep()" class="cursor-pointer text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 hover:text-white" style="display: none;">[ Back ]</div>
-    </div>
+<body class="grid-bg min-h-screen p-8">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-12 flex justify-between items-center">
+            <h1 class="text-3xl font-black italic">REELOS<span class="text-cyan-400">AI</span> / CONFIG</h1>
+            <a href="/" class="text-xs text-gray-500 hover:text-white uppercase tracking-widest">Exit Terminal</a>
+        </header>
 
-    <div class="max-w-6xl w-full pt-16">
-        <div id="progress-container" class="max-w-xl mx-auto w-full mb-12">
-            <div class="flex justify-between mb-4 text-[10px] uppercase tracking-[0.3em] text-gray-500 font-black">
-                <span id="step-label">Step 1 of 7</span>
-                <span id="percent-label">14%</span>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-6">
+                <div class="config-card p-8">
+                    <h2 class="text-xl font-bold mb-6 text-cyan-400 uppercase tracking-tighter">1. Select AI Voice Archetype</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="p-4 border border-white/10 rounded-xl cursor-pointer hover:border-cyan-500 transition">
+                            <input type="radio" name="voice" class="hidden">
+                            <p class="font-bold">"The Architect"</p>
+                            <p class="text-xs text-gray-500">Deep, Gritty, Authority</p>
+                        </label>
+                        <label class="p-4 border border-white/10 rounded-xl cursor-pointer hover:border-cyan-500 transition">
+                            <input type="radio" name="voice" class="hidden">
+                            <p class="font-bold">"The Analyst"</p>
+                            <p class="text-xs text-gray-500">Fast, Technical, Clean</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="config-card p-8">
+                    <h2 class="text-xl font-bold mb-6 text-cyan-400 uppercase tracking-tighter">2. Visual Style & Niche</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-[10px] uppercase text-gray-500 font-bold">Content Topic</label>
+                            <select>
+                                <option>AI Automation Agency (AAA)</option>
+                                <option>Tech-Noir Philosophy</option>
+                                <option>Cyber-Wealth & Crypto</option>
+                                <option>Future SaaS</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[10px] uppercase text-gray-500 font-bold">Visual Aesthetic</label>
+                            <select>
+                                <option>Cyberpunk / Dark Mode</option>
+                                <option>Minimalist Industrial</option>
+                                <option>Hyper-Realistic Unreal Engine</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                <div id="progress" class="h-full transition-all duration-500" style="width: 14%"></div>
+
+            <div class="config-card p-8 h-fit sticky top-8">
+                <h2 class="text-xl font-bold mb-4 uppercase">Weekly Vault Pass</h2>
+                <div class="text-4xl font-black mb-6">$49<span class="text-sm text-gray-500">/mo</span></div>
+                <ul class="text-xs text-gray-400 space-y-3 mb-8">
+                    <li>✓ Custom Voice Cloning</li>
+                    <li>✓ 10+ Curated Reels / Week</li>
+                    <li>✓ Done-For-You Scripts</li>
+                </ul>
+                <button class="w-full py-4 bg-cyan-500 text-black font-black rounded-xl uppercase tracking-widest hover:scale-[1.02] transition">Initialize Subscription</button>
             </div>
         </div>
-
-        <form id="masterForm">
-            <div class="step-content active" id="step1">
-                <div class="glass-card p-8 max-w-xl mx-auto">
-                    <h2 class="text-2xl font-black mb-6 italic uppercase text-gradient">Target Niche</h2>
-                    <button type="button" onclick="nextStep(2)" class="option-btn"><b>AI Automation Agency</b></button>
-                    <button type="button" onclick="nextStep(2)" class="option-btn"><b>Cyber Wealth / Finance</b></button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step2">
-                <div class="glass-card p-8 max-w-xl mx-auto">
-                    <h2 class="text-2xl font-black mb-6 italic uppercase text-gradient">Neural Voice</h2>
-                    <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Alpha (Male)</b></button>
-                    <button type="button" onclick="nextStep(3)" class="option-btn"><b>The Oracle (Female)</b></button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step3">
-                <div class="glass-card p-8 max-w-xl mx-auto">
-                    <h2 class="text-2xl font-black mb-6 italic uppercase text-gradient">Visual Engine</h2>
-                    <button type="button" onclick="nextStep(4)" class="option-btn"><b>Unreal Engine 5 (Realistic)</b></button>
-                    <button type="button" onclick="nextStep(4)" class="option-btn"><b>Cyber-Noir (Stylized)</b></button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step4">
-                <div class="glass-card p-8 max-w-xl mx-auto">
-                    <h2 class="text-2xl font-black mb-6 italic uppercase text-gradient">Post Frequency</h2>
-                    <button type="button" onclick="nextStep(5)" class="option-btn"><b>Standard (1x Daily)</b></button>
-                    <button type="button" onclick="nextStep(5)" class="option-btn"><b>Aggressive (3x Daily)</b></button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step5">
-                <div class="glass-card p-8 max-w-xl mx-auto">
-                    <h2 class="text-2xl font-black mb-6 italic uppercase text-gradient">Caption System</h2>
-                    <button type="button" onclick="nextStep(6)" class="option-btn"><b>Kinetic Hormozi Style</b></button>
-                    <button type="button" onclick="nextStep(6)" class="option-btn"><b>Minimalist Cinematic</b></button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step6">
-                <div class="glass-card p-8 max-w-xl mx-auto text-center">
-                    <h2 class="text-2xl font-black mb-4 italic uppercase text-gradient">Automation Link</h2>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-6 italic">Required for Auto-Post functionality</p>
-                    <input type="text" placeholder="@your.instagram" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl mb-6 focus:border-cyan-500 outline-none text-center font-bold tracking-widest uppercase">
-                    <button type="button" onclick="nextStep(7)" class="w-full py-5 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black rounded-xl uppercase tracking-widest">Generate Plans</button>
-                </div>
-            </div>
-
-            <div class="step-content" id="step7">
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl font-black italic uppercase text-gradient">Select Leverage</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto pb-10">
-                    <div class="glass-card p-6 flex flex-col justify-between border-white/10">
-                        <div>
-                            <h3 class="text-lg font-black uppercase tracking-tighter mb-1">Starter</h3>
-                            <div class="text-3xl font-black mb-6">$19.99<span class="text-[10px] text-gray-500 uppercase font-normal ml-1">/mo</span></div>
-                            <ul class="space-y-4 mb-8 text-[10px] font-black uppercase tracking-wider">
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> 5 Weekly Drops</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> 4K Assets</li>
-                                <li class="flex items-center gap-2 text-gray-700"><span>×</span> Neural Voice</li>
-                                <li class="flex items-center gap-2 text-gray-700"><span>×</span> Auto-Post</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black uppercase text-[10px]">Select Starter</button>
-                    </div>
-                    <div class="glass-card p-6 border-cyan-500/40 bg-cyan-500/5 relative flex flex-col justify-between md:scale-110 z-10">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-purple-500 text-black px-3 py-1 rounded-full text-[8px] font-black uppercase">Most Popular</div>
-                        <div>
-                            <h3 class="text-lg font-black uppercase tracking-tighter mb-1 text-gradient">Pro Vault</h3>
-                            <div class="text-3xl font-black mb-6">$49.99<span class="text-[10px] text-gray-500 uppercase font-normal ml-1">/mo</span></div>
-                            <ul class="space-y-4 mb-8 text-[10px] font-black uppercase tracking-wider">
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> 15 Weekly Drops</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> Neural Voice</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> Auto-Post</li>
-                                <li class="flex items-center gap-2 text-gray-700"><span>×</span> Scaling Audit</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="w-full py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-black uppercase text-[10px] rounded-xl">Get Full Access</button>
-                    </div>
-                    <div class="glass-card p-6 flex flex-col justify-between border-white/10">
-                        <div>
-                            <h3 class="text-lg font-black uppercase tracking-tighter mb-1">Elite Auto</h3>
-                            <div class="text-3xl font-black mb-6">$99.99<span class="text-[10px] text-gray-500 uppercase font-normal ml-1">/mo</span></div>
-                            <ul class="space-y-4 mb-8 text-[10px] font-black uppercase tracking-wider">
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> Unlimited Drops</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> All Pro Features</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> Auto-Post</li>
-                                <li class="flex items-center gap-2"><span class="text-cyan-400 text-base">✓</span> Scaling Audit</li>
-                            </ul>
-                        </div>
-                        <button type="button" class="w-full py-4 bg-white/5 border border-white/10 rounded-xl font-black uppercase text-[10px]">Go Elite</button>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
-
-    <script>
-        let currentStep = 1;
-        function nextStep(step) {
-            currentStep = step;
-            document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            updateProgress(step);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        function prevStep() { if (currentStep > 1) nextStep(currentStep - 1); }
-        function updateProgress(step) {
-            const container = document.getElementById('progress-container');
-            const backBtn = document.getElementById('back-btn');
-            if (step === 7) { container.style.display = 'none'; backBtn.style.display = 'flex'; }
-            else { container.style.display = 'block'; backBtn.style.display = step > 1 ? 'flex' : 'none';
-                let percent = Math.round((step / 7) * 100);
-                document.getElementById('progress').style.width = percent + '%';
-                document.getElementById('step-label').innerText = 'Step ' + step + ' of 7';
-                document.getElementById('percent-label').innerText = percent + '%';
-            }
-        }
-    </script>
 </body>
 </html>
